@@ -103,6 +103,10 @@ if(UNIX)
     if (${BUILD_SHARED_LIBS})
         target_compile_options(discord-rpc PRIVATE -fPIC)
     endif (${BUILD_SHARED_LIBS})
+    
+    if (${BUILD_PIC})
+    	target_compile_options(discord-rpc PRIVATE -fPIC)
+    endif (${BUILD_PIC})
 
     if (APPLE)
         target_link_libraries(discord-rpc PRIVATE "-framework AppKit")
